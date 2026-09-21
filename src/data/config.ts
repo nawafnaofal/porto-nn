@@ -39,7 +39,7 @@ const config = {
   },
   social: {
     linkedin: "https://www.linkedin.com/in/nawaf-naofal-2a061a209",
-    instagram: "https://www.instagram.com/nawafnaofal/",
+    instagram: "https://www.instagram.com/zenoffl/",
     facebook: "https://www.facebook.com/profile.php?id=100010029821759",
     github: "https://github.com/nawafnaofal",
   },
