@@ -38,9 +38,8 @@ const config = {
     return this.site + "/assets/seo/og-image.png";
   },
   social: {
-    twitter: "https://x.com/_Abhi_Speaks/",
     linkedin: "https://www.linkedin.com/in/nawaf-naofal-2a061a209",
-    instagram: "https://www.instagram.com/_.celestial_abhi._/",
+    instagram: "https://www.instagram.com/nawafnaofal/",
     facebook: "https://www.facebook.com/profile.php?id=100010029821759",
     github: "https://github.com/nawafnaofal",
   },

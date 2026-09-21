@@ -9,6 +9,7 @@ import {
   FaGit,
   FaGithub,
   FaHtml5,
+  FaInstagram,
   FaLinkedin,
   FaLinux,
   FaNodeJs,
@@ -58,6 +59,12 @@ const CONTACT_LINKS = [
     href: "https://github.com/nawafnaofal",
     content: "/nawafnaofal",
     icon: <FaGithub height={"50px"} />,
+  },
+  {
+    name: "Instagram",
+    href: "https://www.instagram.com/nawafnaofal/",
+    content: "@nawafnaofal",
+    icon: <FaInstagram height={"50px"} />,
   },
 ];
 
