@@ -71,158 +71,131 @@ const CONTACT_LINKS = [
 const TOOLS = [
   {
     name: "JavaScript",
-    content: "JavaScript is a high-level, interpreted programming language",
     icon: <SiJavascript size={"50px"} color={"#f0db4f"} />,
     color: "#f0db4f",
   },
   {
     name: "TypeScript",
-    content: "TypeScript is a superset of JavaScript that compiles to plain JS",
     icon: <SiTypescript size={"50px"} color={"#007acc"} />,
     color: "#007acc",
   },
   {
     name: "HTML",
-    content: "Next.js is a React framework for production",
     icon: <FaHtml5 size={"50px"} color="#e34c26" />,
     color: "#e34c26",
   },
   {
     name: "CSS",
-    content: "Next.js is a React framework for production",
     icon: <FaCss3 size={"50px"} color="#563d7c" />,
     color: "#563d7c",
   },
   {
     name: "Nodejs",
-    content: "Next.js is a React framework for production",
     icon: <FaNodeJs size={"50px"} color="#6cc24a" />,
     color: "#6cc24a",
   },
   {
     name: "React.js",
-    content: "Next.js is a React framework for production",
     icon: <FaReact size={"50px"} color="#61dafb" />,
     color: "#61dafb",
   },
   {
     name: "Docker",
-    content: "Next.js is a React framework for production",
     icon: <FaDocker size={"50px"} color="#2496ed" />,
     color: "#2496ed",
   },
   {
     name: "NginX",
-    content: "Next.js is a React framework for production",
     icon: <DiNginx size={"50px"} color="#008000" />,
     color: "#008000",
   },
   {
     name: "Vue.js",
-    content: "Next.js is a React framework for production",
     icon: <FaVuejs size={"50px"} color="#41b883" />,
     color: "#41b883",
   },
   {
     name: "Express.js",
-    content: "Next.js is a React framework for production",
     icon: <SiExpress size={"50px"} color="#fff" />,
     color: "#000000",
   },
   {
     name: "PostgreSQL",
-    content: "Next.js is a React framework for production",
     icon: <DiPostgresql size={"50px"} color="#336791" />,
     color: "#336791",
   },
   {
     name: "MongoDB",
-    content: "Next.js is a React framework for production",
     icon: <DiMongodb size={"50px"} color="#4db33d" />,
     color: "#4db33d",
   },
   {
     name: "Tailwind CSS",
-    content: "Next.js is a React framework for production",
     icon: <RiTailwindCssFill size={"50px"} color="#06b6d4" />,
     color: "#06b6d4",
   },
   {
     name: "Firebase",
-    content: "Next.js is a React framework for production",
     icon: <RiFirebaseFill size={"50px"} color="#FFCA28" />,
     color: "#FFCA28",
   },
   {
     name: "Git",
-    content: "Next.js is a React framework for production",
     icon: <FaGit size={"50px"} color="#f05032" />,
     color: "#f05032",
   },
   {
     name: "GitHub",
-    content: "Next.js is a React framework for production",
     icon: <FaGithub size={"50px"} color="#fff" />,
     color: "#000000",
   },
   {
     name: "VS Code",
-    content: "Next.js is a React framework for production",
     icon: <SiVisualstudiocode size={"50px"} color="#007acc" />,
     color: "#007acc",
   },
   {
     name: "VIM",
-    content: "Next.js is a React framework for production",
     icon: <DiVim size={"50px"} color="#fff" />,
     color: "#000000",
   },
   {
     name: "Prettier",
-    content: "Next.js is a React framework for production",
     icon: <SiPrettier size={"50px"} color="#f7b93c" />,
     color: "#f7b93c",
   },
   {
     name: "NPM",
-    content: "Next.js is a React framework for production",
     icon: <DiNpm size={"50px"} color="#CB3837" />,
     color: "#CB3837",
   },
   {
     name: "Yarn",
-    content: "Next.js is a React framework for production",
     icon: <FaYarn size={"50px"} color="#2C8EBB" />,
     color: "#2C8EBB",
   },
   {
     name: "Vercel",
-    content: "Next.js is a React framework for production",
     icon: <SiVercel size={"50px"} color="#fff" />,
     color: "#000000",
   },
   {
     name: "Linux",
-    content: "Next.js is a React framework for production",
     icon: <FaLinux size={"50px"} color="#fff" />,
     color: "#000000",
   },
   {
     name: "Kubuntu",
-    content: "Next.js is a React framework for production",
-    // give me correct color for  kubuntu
     icon: <SiKubuntu size={"50px"} color="#0077C4" />,
     color: "#000000",
   },
   {
     name: "Terminal",
-    content: "Next.js is a React framework for production",
     icon: <TbTerminal2 size={"50px"} color="#fff" />,
     color: "#000000",
   },
   {
     name: "AWS",
-    content: "Next.js is a React framework for production",
     icon: <FaAws size={"50px"} color="#3f51b5" />,
     color: "#000000",
   },
@@ -286,17 +259,12 @@ function Page() {
             className="p-10 border-[.5px] rounded-md border-zinc-600"
             style={{ backdropFilter: "blur(2px)" }}
           >
-            <h1 className="text-3xl mb-10 lg:md-20">About me</h1>
-            <p className="mb-10 text-roboto">
-              Hey there! I&apos;m Nawaf, a Comp. Sci. Engineer with 1.5 year experience in Devlopment, DevOps and
-              Database management with hands-on experience in deploying & automating workflows, and
-              collaborating with foreign clients. Strong analytical skills,effective communication,
-              and a team-oriented approach to driving process improvements and delivering results.
+            <h1 className="text-3xl mb-8 lg:mb-10 font-bold text-white">About me</h1>
+            <p className="mb-6 text-zinc-300 leading-relaxed font-sans">
+              Hi, I&apos;m Nawaf Naofal, a Computer Science graduate and developer based in Indonesia. I specialize in building full-stack web applications, interactive 3D web interfaces, and game mechanics. My background covers full-stack web development with React, Next.js, and Laravel, alongside scientific research and published technical books.
             </p>
-            <p className="mb-10">
-              When I&apos;m not coding, you can find me [Your
-              Interests/Hobbies], exploring new technologies, or sipping coffee
-              while brainstorming my next project.
+            <p className="mb-10 text-zinc-400 leading-relaxed font-sans">
+              I focus on solving concrete engineering challenges, such as designing RESTful backend services, writing clean component architectures, optimizing WebGL graphics in Three.js, and programming responsive gameplay systems in Unity with C#.
             </p>
             <h1 className="text-3xl mb-10 lg:md-20">Stuff I use</h1>
             <div className="mb-5">

@@ -370,6 +370,65 @@ export type Project = {
 };
 const projects: Project[] = [
   {
+    id: "ruang-studio",
+    category: "Contemporary E-Commerce & Fashion Studio",
+    title: "RUANG: Contemporary Fashion Studio & E-Commerce",
+    src: "/assets/projects-screenshots/ruang/1.png",
+    screenshots: ["1.png", "2.png", "3.png"],
+    live: "https://ruangg.vercel.app/",
+    skills: {
+      frontend: [
+        PROJECT_SKILLS.next,
+        PROJECT_SKILLS.react,
+        PROJECT_SKILLS.tailwind,
+        PROJECT_SKILLS.ts,
+      ],
+      backend: [
+        PROJECT_SKILLS.supabase,
+        PROJECT_SKILLS.node,
+      ],
+    },
+    get content() {
+      return (
+        <div>
+          <div className="mb-4 inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-neutral-500/10 text-neutral-300 border border-neutral-500/30">
+            <span className="w-1.5 h-1.5 rounded-full bg-neutral-300" />
+            Full-Stack E-Commerce
+          </div>
+          <TypographyP className="font-mono text-base mb-4 leading-relaxed">
+            Platform e-commerce studio busana kontemporer dengan tata letak editorial dan tipografi arsitektural. Menyediakan katalog rilisan terbatas, keranjang belanja interaktif, alur checkout langsung, serta pelacakan pengiriman kurir domestik.
+          </TypographyP>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 my-4">
+            <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
+              <h5 className="font-semibold text-white text-sm mb-1">Editorial & Architectural Layout</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Tata letak minimalis terinspirasi editorial fashion dengan palet netral bone/ink, tipografi presisi, dan transisi visual halus.</p>
+            </div>
+            <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
+              <h5 className="font-semibold text-white text-sm mb-1">Filter Katalog & Pencarian</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Penyaringan produk berdasarkan kategori (Outerwear, Knitwear, Tailoring), filter teks instan, dan pengurutan harga maupun ketersediaan stok.</p>
+            </div>
+            <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
+              <h5 className="font-semibold text-white text-sm mb-1">Keranjang Belanja & Alur Checkout</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Interaksi drawer keranjang belanja, pemilihan varian ukuran dan jumlah, serta integrasi simulasi multi-pembayaran (QRIS, VA Bank, dan Card).</p>
+            </div>
+            <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
+              <h5 className="font-semibold text-white text-sm mb-1">Pelacakan Status Pengiriman</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Pemantauan nomor resi dan riwayat perjalanan paket (J&T, SiCepat, JNE) yang terhubung dengan invoice transaksi.</p>
+            </div>
+          </div>
+          <ProjectsLinks live={this.live} repo={this.github} />
+          <SlideShow
+            images={[
+              `${BASE_PATH}/ruang/1.png`,
+              `${BASE_PATH}/ruang/2.png`,
+              `${BASE_PATH}/ruang/3.png`,
+            ]}
+          />
+        </div>
+      );
+    },
+  },
+  {
     id: "gajihub",
     category: "Full-Stack Web & HRIS Platform",
     title: "Gaji-Hub: Smart HRIS & Payroll Platform",
@@ -395,28 +454,28 @@ const projects: Project[] = [
       return (
         <div>
           <div className="mb-4 inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-amber-500/10 text-amber-400 border border-amber-500/30">
-            <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+            <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
             Full-Stack Application
           </div>
           <TypographyP className="font-mono text-base mb-4 leading-relaxed">
-            Platform HRIS dan Payroll modern untuk mengelola administrasi karyawan secara otomatis, akurat, dan terintegrasi. Dibangun menggunakan <strong>React + Inertia.js</strong> di sisi frontend dan <strong>Laravel + MySQL</strong> di sisi backend untuk menghadirkan pengalaman navigasi instan tanpa reload.
+            Platform HRIS dan Payroll untuk mengelola administrasi karyawan. Dibangun menggunakan <strong>React + Inertia.js</strong> di frontend dan <strong>Laravel + MySQL</strong> di backend untuk menghadirkan alur kerja reaktif tanpa reload halaman penuh.
           </TypographyP>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 my-4">
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">📍 Presensi GPS & Validasi Kamera</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Pencatatan kehadiran presisi dengan radius lokasi kantor berbasis koordinat GPS serta verifikasi foto selfie langsung dari perangkat karyawan.</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Presensi GPS & Validasi Kamera</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Pencatatan kehadiran berbasis radius koordinat GPS kantor serta verifikasi foto selfie langsung dari perangkat.</p>
             </div>
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">💰 Payroll & Kalkulasi Pajak Otomatis</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Otomasi perhitungan gaji bulanan, potongan TER PPh 21, iuran BPJS, lembur, serta ekspor slip gaji digital berformat PDF.</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Kalkulasi Payroll & Pajak</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Perhitungan gaji bulanan otomatis, pemotongan skema TER PPh 21, iuran BPJS, lembur, dan ekspor slip gaji format PDF.</p>
             </div>
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">⚡ Alur Kerja Reaktif (Inertia.js)</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Integrasi seamless antara backend Laravel dan UI React, menghasilkan transisi halaman yang cepat dan performa responsif di desktop maupun mobile.</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Navigasi Reaktif (Inertia.js)</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Menghubungkan routing Laravel dengan komponen React tanpa reload halaman, menjaga performa tetap responsif.</p>
             </div>
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">🛡️ Manajemen Hak Akses & Data Aman</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Pengaturan multi-level role (Admin, HR, dan Karyawan) dengan proteksi data sensitif dan riwayat transaksi yang terdokumentasi rapi.</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Manajemen Hak Akses (Role-based)</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Pemisahan hak akses bertingkat (Admin, HR, dan Karyawan) dengan pengamanan data sensitif dan pencatatan riwayat aktivitas.</p>
             </div>
           </div>
           <ProjectsLinks live={this.live} repo={this.github} />
@@ -453,28 +512,28 @@ const projects: Project[] = [
       return (
         <div>
           <div className="mb-4 inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-red-500/10 text-red-400 border border-red-500/30">
-            <span className="w-2 h-2 rounded-full bg-red-400 animate-pulse" />
-            Headless / Decoupled Architecture
+            <span className="w-1.5 h-1.5 rounded-full bg-red-400" />
+            Headless Architecture
           </div>
           <TypographyP className="font-mono text-base mb-4 leading-relaxed">
-            Portal utama dan pusat media digital resmi untuk grup industri pertahanan nasional (PT RAMA, PT JBNP, dan PT AMSA). Menggunakan arsitektur <strong>Decoupled</strong> yang menghubungkan frontend interaktif (React + Vite) dengan backend terproteksi berbasis <strong>Laravel REST API & MySQL</strong> untuk publikasi berita, dokumentasi pengujian, dan profil holding.
+            Portal pusat media resmi untuk grup industri pertahanan nasional (PT RAMA, PT JBNP, dan PT AMSA). Menggunakan arsitektur terpisah antara antarmuka (React + Vite) dan backend <strong>Laravel REST API & MySQL</strong> untuk publikasi artikel, pengujian produk, serta profil perusahaan.
           </TypographyP>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 my-4">
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">🔗 Backend REST API & Autentikasi Aman</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Backend Laravel dengan autentikasi berbasis token untuk pengelolaan rilis berita, upload media, dan pengamanan endpoint dari akses tidak sah.</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Backend REST API & Autentikasi</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Manajemen konten berita dan upload media terlindungi autentikasi token untuk mencegah manipulasi data dari luar.</p>
             </div>
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">🌐 Gerbang Ekosistem Multi-Perusahaan</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Navigasi terintegrasi yang menghubungkan portal holding secara mulus ke seluruh subdomain anak perusahaan (rama, jbnp, amsa.j-forces.co.id).</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Portal Ekosistem Multi-Perusahaan</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Navigasi terpadu yang menghubungkan portal induk secara konsisten ke seluruh subdomain anak perusahaan.</p>
             </div>
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">⚡ Performa Cepat & Desain Responsif</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Optimasi aset gambar dan script modular sehingga halaman dapat dimuat dalam waktu kurang dari satu detik dengan tampilan presisi di semua resolusi layar.</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Optimasi Aset & Desain Responsif</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Kompresi gambar dan pembagian bundle script modular untuk menjaga waktu muat tetap cepat di berbagai resolusi layar.</p>
             </div>
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">🔍 SEO & Struktur Konten Optimal</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Penerapan metadata OpenGraph, schema terstruktur, dan sitemap otomatis untuk visibilitas maksimal serta kemudahan indeks di Google.</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Struktur Metadata & SEO</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Konfigurasi tag OpenGraph, data terstruktur, dan sitemap otomatis untuk mempermudah pengindeksan mesin pencari.</p>
             </div>
           </div>
           <ProjectsLinks live={this.live} repo={this.github} />
@@ -509,28 +568,28 @@ const projects: Project[] = [
       return (
         <div>
           <div className="mb-4 inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
-            <span className="w-2 h-2 rounded-full bg-emerald-400" />
-            Interactive 3D Web Experience
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+            Interactive 3D Web
           </div>
           <TypographyP className="font-mono text-base mb-4 leading-relaxed">
-            Website profil dan katalog taktis militer yang dilengkapi fitur inspeksi 3D interaktif real-time menggunakan <strong>Three.js / WebGL</strong>. Pengguna dapat melihat secara detail geometri helm balistik standar internasional (NIJ 0101.06) dari berbagai sudut dengan pencahayaan realistis.
+            Katalog perlengkapan pertahanan militer dengan inspeksi model 3D real-time menggunakan <strong>Three.js / WebGL</strong>. Pengunjung dapat memeriksa geometri helm balistik berstandar internasional (NIJ 0101.06) dari berbagai sudut pandang.
           </TypographyP>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 my-4">
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">🔄 Kontrol 3D Rotasi 360° yang Halus</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Fitur drag, rotate, dan zoom dengan peredam inersia (smooth damping) untuk navigasi model 3D yang stabil dan intuitif.</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Kontrol Rotasi 3D 360°</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Interaksi drag, rotasi, dan zoom dilengkapi damping inersia untuk kendali kamera yang terkontrol dan stabil.</p>
             </div>
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">✨ Tekstur Realistis & Simulasi Material</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Penerapan material PBR untuk menampilkan kilau, serat pelindung balistik, dan detail komponen perlengkapan taktis secara nyata.</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Material PBR & Tekstur Balistik</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Pemanfaatan Physically Based Rendering untuk menampilkan refleksi cahaya, serat pelindung balistik, dan detail permukaan alat.</p>
             </div>
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">🚀 Optimasi Model 3D Ringan (60 FPS)</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Kompresi ukuran file 3D agar cepat dimuat di peramban web dan tetap berjalan lancar pada 60 frame per detik di desktop maupun laptop.</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Optimasi Model 3D (60 FPS)</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Reduksi poligon dan kompresi tekstur aset 3D agar waktu muat ringkas dan rendering stabil pada 60 FPS.</p>
             </div>
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">📋 Spesifikasi Teknis yang Interaktif</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Penyajian informasi spesifikasi uji balistik (level proteksi kaliber peluru dan bobot) yang tersinkronisasi rapi dengan tampilan produk.</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Sinkronisasi Spesifikasi Teknis</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Penyajian ringkas data kaliber proteksi uji balistik dan bobot helm yang terhubung dengan sudut pandang model.</p>
             </div>
           </div>
           <ProjectsLinks live={this.live} repo={this.github} />
@@ -565,28 +624,28 @@ const projects: Project[] = [
       return (
         <div>
           <div className="mb-4 inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-red-500/10 text-red-400 border border-red-500/30">
-            <span className="w-2 h-2 rounded-full bg-red-400" />
-            Real-Time 3D Vehicle Showcase
+            <span className="w-1.5 h-1.5 rounded-full bg-red-400" />
+            Real-Time 3D Showcase
           </div>
           <TypographyP className="font-mono text-base mb-4 leading-relaxed">
-            Katalog digital dan simulasi 3D untuk armada kendaraan tempur lapis baja (Rantis & Ransus). Pengguna dapat mengeksplorasi kendaraan taktis seperti Garuda UN dan ILSV lengkap dengan pengaturan simulasi arah cahaya matahari serta bayangan yang dinamis.
+            Katalog digital dan tampilan 3D interaktif armada kendaraan taktis dan khusus (Garuda UN dan ILSV). Pengguna dapat melihat detail eksterior kendaraan dan menguji arah sumber cahaya matahari secara langsung.
           </TypographyP>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 my-4">
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">☀️ Simulasi Arah Cahaya & Bayangan Lembut</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Slider sudut cahaya interaktif untuk mengubah arah pencahayaan matahari secara real-time disertai bayangan realistis di permukaan tanah.</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Kontrol Pencahayaan & Bayangan</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Slider sudut elevasi dan rotasi matahari untuk mengamati perilaku bayangan bodi kendaraan di atas permukaan tanah.</p>
             </div>
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">🔄 Pembersihan Memori GPU Otomatis</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Sistem pengelolaan memori WebGL yang membersihkan aset grafis saat berpindah model kendaraan, menjaga browser tetap ringan dan bebas lag.</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Manajemen Memori WebGL</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Pembersihan buffer geometri dan tekstur GPU saat pergantian tipe kendaraan untuk mencegah kebocoran memori browser.</p>
             </div>
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">🎯 Penyesuaian Kualitas Grafis Otomatis</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Kualitas rendering dan ketajaman bayangan dapat beradaptasi dengan spesifikasi perangkat pengguna agar pengalaman eksplorasi tetap mulus.</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Penyesuaian Level Detail Grafis</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Resolusi shadow map dan sampling render yang menyesuaikan kapabilitas GPU perangkat pengguna secara otomatis.</p>
             </div>
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">🛡️ Panel Spesifikasi Taktis & Galeri Detail</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">HUD interaktif untuk melihat data performa mesin, ketebalan baja pelindung, sistem penggerak roda, dan foto pengujian lapangan.</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Panel Spesifikasi & Galeri Pengujian</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Informasi spesifikasi mesin, proteksi pelat baja, konfigurasi transmisi penggerak, serta galeri uji coba medan.</p>
             </div>
           </div>
           <ProjectsLinks live={this.live} repo={this.github} />
@@ -621,28 +680,28 @@ const projects: Project[] = [
       return (
         <div>
           <div className="mb-4 inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-amber-500/10 text-amber-400 border border-amber-500/30">
-            <span className="w-2 h-2 rounded-full bg-amber-400" />
-            Virtual 3D Factory Experience
+            <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+            Virtual 3D Factory Tour
           </div>
           <TypographyP className="font-mono text-base mb-4 leading-relaxed">
-            Showroom virtual 3D yang menampilkan hanggar pabrik manufaktur komponen presisi tinggi untuk sektor pertahanan dan industri. Memadukan grafis <strong>Three.js</strong> dengan pergerakan kamera sinematik untuk menjelajahi unit mesin CNC kelas dunia (HAAS ST-20Y).
+            Showroom virtual 3D yang menampilkan hanggar pabrik manufaktur komponen presisi untuk sektor pertahanan. Memadukan grafis <strong>Three.js</strong> dengan pergerakan kamera sinematik untuk menelusuri stasiun kerja mesin CNC (HAAS ST-20Y).
           </TypographyP>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 my-4">
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">🏭 Rekonstruksi Hanggar Pabrik Realistis</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Visualisasi spasial 3D menyeluruh mencakup struktur overhead crane, tata letak area kerja pabrik, dan pencahayaan industrial modern.</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Rekonstruksi 3D Hanggar Pabrik</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Visualisasi spasial 3D mencakup struktur overhead crane, tata letak workstation pabrik, dan pencahayaan industrial.</p>
             </div>
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">📹 Kamera Navigasi Sinematik Antar Mesin</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Perpindahan sudut pandang kamera yang mulus saat pengguna memilih stasiun kerja mesin CNC turning, turn-mill, maupun 5-axis.</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Navigasi Kamera Antar Mesin</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Perpindahan sudut pandang kamera terarah saat pengunjung memilih stasiun kerja mesin turning, turn-mill, maupun 5-axis.</p>
             </div>
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">🔬 Visualisasi Akurasi Presisi Ekstrem (CMM)</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Penyajian informasi mesin pengukur CMM (Coordinate Measuring Machine) yang mampu menguji ketelitian mikron (hingga 0,15 μm).</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Pengukuran Presisi Mikron (CMM)</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Informasi teknis mesin Coordinate Measuring Machine yang menguji toleransi dimensi mikron (hingga 0,15 μm).</p>
             </div>
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">⚡ Antarmuka Modern & Akses Cepat</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Tampilan HUD bernuansa modern industrial yang ringan diakses dan nyaman digunakan di berbagai ukuran layar monitor.</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Antarmuka Kontrol & HUD</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Overlay antarmuka bertema industrial yang ringan diakses dan disesuaikan untuk berbagai ukuran monitor.</p>
             </div>
           </div>
           <ProjectsLinks live={this.live} repo={this.github} />
@@ -675,28 +734,28 @@ const projects: Project[] = [
       return (
         <div>
           <div className="mb-4 inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-red-500/10 text-red-400 border border-red-500/30">
-            <span className="w-2 h-2 rounded-full bg-red-400" />
-            Lead Programmer • Game Jam Entry
+            <span className="w-1.5 h-1.5 rounded-full bg-red-400" />
+            Lead Programmer • Game Jam
           </div>
           <TypographyP className="font-mono text-base mb-4 leading-relaxed">
-            Game petualangan horor psikologis <strong>2D Top-Down Pixel Art</strong> yang dikembangkan bersama tim <strong>Shoshinsha Game</strong> dalam program <em>Infinite Learning Game Batch 5</em>. Menceritakan Aya, seorang pengusir iblis (exorcist) yang menjelajahi pulau misterius penuh misteri dan manipulasi entitas gaib.
+            Game petualangan horor psikologis <strong>2D Top-Down Pixel Art</strong> yang dikembangkan bersama tim <strong>Shoshinsha Game</strong> dalam program <em>Infinite Learning Game Batch 5</em>. Berperan sebagai Lead Programmer mengimplementasikan controller pemain, logika dialog, dan sistem interaksi entitas.
           </TypographyP>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 my-4">
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">🎮 Core Gameplay & Controller Logic (C#)</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Arsitektur pergerakan karakter top-down 8 arah yang responsif, penanganan input pemain, dan sistem interaksi objek lingkungan.</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Logika Karakter & Input Controller (C#)</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Pergerakan top-down 8 arah, penanganan input pemain, dan sistem deteksi interaksi objek lingkungan.</p>
             </div>
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">🧩 Dialog System & Quest Trigger Event</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Implementasi sistem narasi dialog modular yang tersinkronisasi dengan event trigger, branching alur cerita, dan petunjuk eksplorasi.</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Sistem Dialog & Trigger Event</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Implementasi alur narasi dialog modular yang terhubung dengan trigger event dan petunjuk eksplorasi teka-teki.</p>
             </div>
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">👻 AI Entity & Collision Management</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Logika deteksi dan pergerakan entitas musuh dalam mengejar pemain menggunakan 2D collider, boundary check, dan sistem trigger puzzle.</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Manajemen AI Musuh & Kolisi</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Deteksi dan pengejaran karakter menggunakan collider 2D, raycast boundary, dan mekanisme trigger puzzle.</p>
             </div>
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">💾 Game State & Scene Transition</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Sistem state management game (Pause, Inventory, Checkpoint, Game Over, dan New Game) serta transisi audio/visual yang atmosferik.</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Pengelolaan Game State & Transisi Scene</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Arsitektur state permainan (Pause, Inventory, Checkpoint, Game Over) serta transisi scene dan audio latar.</p>
             </div>
           </div>
           <ProjectsLinks live={this.live} repo={this.github} />
@@ -732,28 +791,28 @@ const projects: Project[] = [
       return (
         <div>
           <div className="mb-4 inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-blue-500/10 text-blue-400 border border-blue-500/30">
-            <span className="w-2 h-2 rounded-full bg-blue-400" />
+            <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
             First Author • Peer-Reviewed Journal • DOI: 10.55123/jomlai.v1i1.176
           </div>
           <TypographyP className="font-mono text-base mb-4 leading-relaxed">
-            Artikel ilmiah yang diterbitkan pada <strong>JOMLAI: Journal of Machine Learning and Artificial Intelligence</strong> (Vol. 1, No. 1, 2022). Penelitian ini berfokus pada perancangan dan implementasi sistem informasi e-commerce berbasis arsitektur MVC (Model-View-Controller) dengan framework Laravel untuk mendigitalisasi proses bisnis retail furnitur Az-Zahra Shop.
+            Artikel ilmiah pada <strong>JOMLAI: Journal of Machine Learning and Artificial Intelligence</strong> (Vol. 1, No. 1, 2022). Penelitian membahas perancangan sistem informasi e-commerce berbasis arsitektur MVC dengan framework Laravel untuk proses bisnis retail furnitur Az-Zahra Shop.
           </TypographyP>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 my-4">
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">🏛️ Arsitektur MVC & Clean Code Laravel</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Pemisahan logika bisnis, data model Eloquent ORM, dan antarmuka dinamis untuk skalabilitas sistem transaksi retail.</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Arsitektur MVC Laravel</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Pemisahan logika aplikasi, relasi database Eloquent ORM, dan blade template untuk kebutuhan transaksi ritel.</p>
             </div>
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">📦 Manajemen Inventaris & Order Real-Time</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Otomasi pelacakan ketersediaan stok furnitur, validasi transaksi konsumen, dan rekapitulasi data penjualan periodik.</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Manajemen Inventaris & Order</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Pencatatan ketersediaan stok furnitur, validasi pemesanan pelanggan, dan rekapitulasi data penjualan periodik.</p>
             </div>
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">🔒 Keamanan Autentikasi & Validasi Transaksi</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Penerapan proteksi CSRF token, hashing password bertingkat, dan middleware otorisasi multi-role (Admin & Customer).</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Autentikasi & Validasi Transaksi</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Proteksi CSRF token, hashing password, dan middleware otorisasi multi-role (Admin dan Pelanggan).</p>
             </div>
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">📄 Publikasi Terindeks & DOI Terverifikasi</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Penulis pertama (Nawaf Naofal dkk.) dengan akses naskah lengkap (Full-Text PDF) dan metadata sitasi ilmiah terstandar.</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Indeksasi Jurnal & Identifikasi DOI</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Penulis pertama (Nawaf Naofal dkk.) dengan akses naskah lengkap Full-Text PDF dan sitasi ilmiah resmi.</p>
             </div>
           </div>
           <ProjectsLinks live={this.live} />
@@ -781,28 +840,28 @@ const projects: Project[] = [
       return (
         <div>
           <div className="mb-4 inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
-            <span className="w-2 h-2 rounded-full bg-emerald-400" />
-            Co-Author / Researcher • Jurnal Simpatik (UBSI) • DOI: 10.31294/simpatik.v3i1.1829
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+            Co-Author • Jurnal Simpatik (UBSI) • DOI: 10.31294/simpatik.v3i1.1829
           </div>
           <TypographyP className="font-mono text-base mb-4 leading-relaxed">
-            Riset keamanan jaringan yang dipublikasikan pada <strong>Jurnal Simpatik (Jurnal Sistem Informasi dan Informatika)</strong> Vol. 3 No. 1 (2023). Mengkaji deteksi serangan siber Distributed Denial of Service jenis <em>Low-rate DDoS</em> yang sulit dideteksi oleh firewall konvensional dengan memanfaatkan algoritma ensemble learning <strong>AdaBoost</strong>.
+            Riset keamanan jaringan pada <strong>Jurnal Simpatik (Sistem Informasi dan Informatika)</strong> Vol. 3 No. 1 (2023). Menganalisis deteksi serangan siber Distributed Denial of Service jenis <em>Low-rate DDoS</em> yang sulit diidentifikasi firewall konvensional menggunakan algoritma ensemble <strong>AdaBoost</strong>.
           </TypographyP>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 my-4">
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">🛡️ Deteksi Anomali Low-rate DDoS</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Analisis pola lalu lintas data jaringan berkecepatan rendah yang meniru perilaku pengguna normal untuk melumpuhkan server target.</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Analisis Pola Serangan Low-rate DDoS</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Pemeriksaan profil lalu lintas data kecepatan rendah yang menyerupai pola pengguna normal untuk membebani server target.</p>
             </div>
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">🤖 Algoritma Ensemble AdaBoost</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Pengembangan model klasifikasi boosting dengan adaptive weight updating guna meningkatkan akurasi identifikasi paket berbahaya.</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Klasifikasi dengan Model AdaBoost</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Penerapan model ensemble boosting dengan bobot adaptif untuk meningkatkan akurasi deteksi paket anomali.</p>
             </div>
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">📊 Ekstraksi Fitur & Evaluasi Metrik</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Preprocessing dataset lalu lintas jaringan, evaluasi Confusion Matrix, Precision, Recall, dan F1-Score pada simulasi serangan.</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Ekstraksi Fitur & Evaluasi Metrik</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Preprocessing dataset lalu lintas jaringan, evaluasi Confusion Matrix, Precision, Recall, dan F1-Score.</p>
             </div>
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">📑 Kontribusi Akademik SINTA / UBSI</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Kolaborasi riset (M. Ilman Aqilaa, Diash Firdaus, Nawaf Naofal) untuk solusi pertahanan siber otomatis berbasis AI.</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Kolaborasi Riset & Publikasi</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Penulisan bersama (M. Ilman Aqilaa, Diash Firdaus, Nawaf Naofal) untuk metode pertahanan jaringan berbantuan machine learning.</p>
             </div>
           </div>
           <ProjectsLinks live={this.live} />
@@ -829,28 +888,28 @@ const projects: Project[] = [
       return (
         <div>
           <div className="mb-4 inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-amber-500/10 text-amber-400 border border-amber-500/30">
-            <span className="w-2 h-2 rounded-full bg-amber-400" />
+            <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
             Co-Author • ISBN: 978-623-88549-3-6 • Penerbit: Buku Pedia
           </div>
           <TypographyP className="font-mono text-base mb-4 leading-relaxed">
-            Buku referensi teknis yang diterbitkan oleh <strong>Penerbit Buku Pedia</strong> dan terdistribusi nasional di platform <strong>Bacabuku</strong>. Ditulis bersama Muhammad Ilman Aqilaa dan Rolly Maulana Awangga, buku ini memandu pembaca pemula hingga mahir dalam mengeksplorasi efisiensi bahasa Go untuk manipulasi, pembersihan, dan analisis dataset berskala besar.
+            Buku referensi pemrograman terbitan <strong>Buku Pedia</strong> yang didistribusikan di platform <strong>Bacabuku</strong>. Ditulis bersama Muhammad Ilman Aqilaa dan Rolly Maulana Awangga, membahas penggunaan bahasa Go untuk manipulasi, pembersihan, dan analisis dataset.
           </TypographyP>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 my-4">
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">🚀 Fundamental Ekosistem & Sintaks Go</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Panduan terstruktur mulai dari environment setup, memory safety, struct, function, hingga package management Go modern.</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Sintaks Dasar & Struktur Data Go</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Pembahasan konfigurasi environment, tipe data, struct, function, dan package management dalam ekosistem Go.</p>
             </div>
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">📊 Pipeline Pengolahan Dataset Praktis</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Teknik membaca, memfilter, mentransformasi, dan parsing data dari berbagai format (CSV, JSON, dan database stream).</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Pipeline Pemrosesan Dataset</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Metode parsing, filtering, dan transformasi data dari berbagai format file seperti CSV, JSON, serta query database.</p>
             </div>
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">⚡ Concurrency & Analisis Data Berkecepatan Tinggi</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Pemanfaatan Goroutines dan Channels untuk komputasi analitik data paralel dengan latensi sangat rendah.</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Komputasi Concurrency (Goroutine)</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Pemanfaatan Goroutines dan Channels untuk komputasi analitik paralel yang efisien dalam penggunaan memori.</p>
             </div>
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">📚 ISBN Resmi & Distribusi Digital Nasional</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Buku referensi resmi ber-ISBN yang ditujukan bagi akademisi, mahasiswa informatika, dan developer profesional.</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Publikasi Ber-ISBN & Distribusi</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Buku ber-ISBN resmi yang ditujukan bagi akademisi, mahasiswa informatika, maupun praktisi developer.</p>
             </div>
           </div>
           <ProjectsLinks live={this.live} />
@@ -880,28 +939,28 @@ const projects: Project[] = [
       return (
         <div>
           <div className="mb-4 inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-purple-500/10 text-purple-400 border border-purple-500/30">
-            <span className="w-2 h-2 rounded-full bg-purple-400" />
+            <span className="w-1.5 h-1.5 rounded-full bg-purple-400" />
             Co-Author • Gramedia Digital • Penerbit: Buku Pedia
           </div>
           <TypographyP className="font-mono text-base mb-4 leading-relaxed">
-            Buku panduan pengembangan aplikasi web modern full-stack yang diterbitkan oleh <strong>Penerbit Buku Pedia</strong> dan tersedia resmi di <strong>Gramedia Digital</strong>. Ditulis bersama Fadil Febriansyah, Woro Isti Rahayu, dan Noviana Riza, membedah implementasi arsitektur SPA (Single Page Application) e-commerce interaktif dengan Laravel & Vue.js.
+            Buku panduan pengembangan web full-stack terbitan <strong>Buku Pedia</strong> yang tersedia di <strong>Gramedia Digital</strong>. Ditulis bersama Fadil Febriansyah, Woro Isti Rahayu, dan Noviana Riza, membedah implementasi aplikasi toko online SPA dengan Laravel dan Vue.js.
           </TypographyP>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 my-4">
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">🛒 Arsitektur E-Commerce Full-Stack Modern</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Integrasi backend REST API Laravel yang tangguh dengan antarmuka dinamis komponen Vue.js yang reaktif.</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Arsitektur Full-Stack E-Commerce</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Penggabungan backend REST API Laravel dengan komponen antarmuka reaktif berbasis Vue.js.</p>
             </div>
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">💳 Manajemen Keranjang & Checkout Interaktif</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Pengelolaan state belanja keranjang real-time, kalkulasi ongkos kirim, dan integrasi modul transaksi pembayaran.</p>
+              <h5 className="font-semibold text-white text-sm mb-1">State Manajemen Keranjang & Checkout</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Pengelolaan state belanja keranjang, kalkulasi ongkos kirim, dan alur pembayaran digital.</p>
             </div>
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">🎛️ Dashboard Administrasi & Manajemen Katalog</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Panel admin komprehensif untuk pengelolaan kategori barang, stok produk, multi-gambar, dan laporan pesanan.</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Dashboard Admin & Manajemen Produk</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Panel admin untuk pengelolaan kategori produk, stok inventaris barang, upload foto, dan ringkasan pesanan.</p>
             </div>
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">📖 Terbitan Resmi di Gramedia Digital</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Menjadi buku referensi praktis bagi developer yang ingin menguasai perpaduan dua teknologi web paling populer di industri.</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Distribusi Digital Gramedia</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Buku referensi praktis bagi pengembang yang mempelajari integrasi Laravel dan Vue.js secara terstruktur.</p>
             </div>
           </div>
           <ProjectsLinks live={this.live} />

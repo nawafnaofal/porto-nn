@@ -5,14 +5,13 @@ import { AnimatePresence, motion } from "framer-motion";
 import {
   Modal,
   ModalBody,
+  ModalCloseButton,
   ModalContent,
   ModalFooter,
   ModalTrigger,
 } from "../ui/animated-modal";
 import { FloatingDock } from "../ui/floating-dock";
 import Link from "next/link";
-
-import SmoothScroll from "../smooth-scroll";
 import projects, { Project } from "@/data/projects";
 import { cn } from "@/lib/utils";
 
@@ -196,18 +195,19 @@ const Modall = ({ project }: { project: Project }) => {
             </div>
           </div>
         </ModalTrigger>
-        <ModalBody className="md:max-w-4xl md:max-h-[80%] overflow-auto">
-          <SmoothScroll isInsideModal={true}>
-            <ModalContent>
-              <ProjectContents project={project} />
-            </ModalContent>
-          </SmoothScroll>
-          <ModalFooter className="gap-4">
-            <button className="px-2 py-1 bg-gray-200 text-black dark:bg-black dark:border-black dark:text-white border border-gray-300 rounded-md text-sm w-28">
+        <ModalBody>
+          <ModalContent>
+            <ProjectContents project={project} />
+          </ModalContent>
+          <ModalFooter className="gap-3">
+            <ModalCloseButton className="w-28">
               Cancel
-            </button>
-            <Link href={project.live} target="_blank">
-              <button className="bg-black text-white dark:bg-white dark:text-black text-sm px-2 py-1 rounded-md border border-black w-28">
+            </ModalCloseButton>
+            <Link href={project.live} target="_blank" rel="noopener noreferrer">
+              <button
+                type="button"
+                className="bg-white hover:bg-zinc-200 text-black font-semibold text-sm px-4 py-2 rounded-lg transition-colors w-28"
+              >
                 Visit
               </button>
             </Link>

@@ -14,6 +14,7 @@ function SmoothScroll({ children, isInsideModal = false }: LenisProps) {
   });
 
   useEffect(() => {
+    if (isInsideModal) return;
     if (typeof window !== "undefined") {
       if ("scrollRestoration" in history) {
         history.scrollRestoration = "manual";
@@ -22,7 +23,11 @@ function SmoothScroll({ children, isInsideModal = false }: LenisProps) {
         window.scrollTo(0, 0);
       }
     }
-  }, []);
+  }, [isInsideModal]);
+
+  if (isInsideModal) {
+    return <>{children}</>;
+  }
 
   return (
     <ReactLenis
@@ -30,8 +35,10 @@ function SmoothScroll({ children, isInsideModal = false }: LenisProps) {
       options={{
         duration: 2,
         prevent: (node) => {
-          if (isInsideModal) return true;
-          const modalOpen = node.classList.contains("modall");
+          const modalOpen =
+            (node.classList && typeof node.classList.contains === "function" && node.classList.contains("modall")) ||
+            Boolean(node.closest?.(".modall")) ||
+            Boolean(node.closest?.("[data-lenis-prevent]"));
           return modalOpen;
         },
       }}

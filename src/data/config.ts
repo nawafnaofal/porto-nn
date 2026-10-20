@@ -1,9 +1,9 @@
 const config = {
   title: "Nawaf Naofal | Personal Portfolio",
   description: {
-    long: "Explore the portfolio of Nawaf, a Computer Science Engineer with 1.5 year experience in Devlopment, DevOps & Database management with hands-on experience in deploying & automating workflows, & collaborating with foreign clients. Strong analytical skills, effective communication, and a team-oriented approach to driving process improvements and delivering results.",
+    long: "Portofolio Nawaf, Software Engineer dengan pengalaman 1.5 tahun di Full-stack Development, DevOps, dan pengelolaan database. Berpengalaman menangani otomasi deployment dan kolaborasi langsung dengan klien.",
     short:
-      "Discover the portfolio of Nawaf, a Game Developer & Web Developer.",
+      "Portofolio Nawaf, Web and Game Developer.",
   },
   keywords: [
     "Nawaf",
@@ -13,7 +13,7 @@ const config = {
     "Nawaf Naofal portfolio",
     "portfolio",
     "DevOps",
-    "Devlopment",
+    "Development",
     "Database",
     "AI Docker file optimizer",
     "Finance me",

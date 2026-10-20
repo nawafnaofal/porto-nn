@@ -9,8 +9,6 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { ScrollArea } from "./scroll-area";
-
 interface ModalContextType {
   open: boolean;
   setOpen: (open: boolean) => void;
@@ -50,11 +48,16 @@ export const ModalTrigger = ({
   const { setOpen } = useModal();
   return (
     <button
+      type="button"
       className={cn(
         "px-4 py-2 rounded-md text-black dark:text-white text-center relative overflow-hidden",
         className
       )}
-      onClick={() => setOpen(true)}
+      onClick={(e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        setOpen(true);
+      }}
     >
       {children}
     </button>
@@ -68,25 +71,25 @@ export const ModalBody = ({
   children: ReactNode;
   className?: string;
 }) => {
-  const { open } = useModal();
+  const { open, setOpen } = useModal();
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") setOpen(false);
-      });
-    }
-  }, []);
-  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
     if (open) {
+      document.addEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "auto";
     }
-  }, [open]);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "auto";
+    };
+  }, [open, setOpen]);
 
   const modalRef = useRef(null);
-  const { setOpen } = useModal();
   useOutsideClick(modalRef, () => setOpen(false));
 
   return (
@@ -104,14 +107,16 @@ export const ModalBody = ({
             opacity: 0,
             backdropFilter: "blur(0px)",
           }}
-          className="modall fixed [perspective:800px] [transform-style:preserve-3d] inset-0 h-full w-full  flex items-center justify-center z-50"
+          data-lenis-prevent
+          className="modall fixed [perspective:800px] [transform-style:preserve-3d] inset-0 h-full w-full flex items-center justify-center z-50 p-4 sm:p-6 md:p-8"
         >
           <Overlay />
 
           <motion.div
             ref={modalRef}
+            data-lenis-prevent
             className={cn(
-              "min-h-[50%] max-h-[90%] md:max-w-[40%] bg-white dark:bg-neutral-950 border border-transparent dark:border-neutral-800 md:rounded-2xl relative z-50 flex flex-col flex-1 overflow-hidden",
+              "w-full max-w-4xl max-h-[88vh] bg-neutral-950 border border-neutral-800 rounded-2xl relative z-50 flex flex-col overflow-hidden shadow-2xl",
               className
             )}
             initial={{
@@ -138,9 +143,12 @@ export const ModalBody = ({
             }}
           >
             <CloseIcon />
-            <ScrollArea className="h-[80dvh] w-full rounded-md border">
+            <div
+              data-lenis-prevent
+              className="flex-1 overflow-y-auto overscroll-contain w-full"
+            >
               {children}
-            </ScrollArea>
+            </div>
           </motion.div>
         </motion.div>
       )}
@@ -156,9 +164,31 @@ export const ModalContent = ({
   className?: string;
 }) => {
   return (
-    <div className={cn("flex flex-col flex-1 p-3 md:p-10", className)}>
+    <div className={cn("flex flex-col flex-1 p-4 sm:p-6 md:p-8", className)}>
       {children}
     </div>
+  );
+};
+
+export const ModalCloseButton = ({
+  children,
+  className,
+}: {
+  children?: ReactNode;
+  className?: string;
+}) => {
+  const { setOpen } = useModal();
+  return (
+    <button
+      type="button"
+      onClick={() => setOpen(false)}
+      className={cn(
+        "px-4 py-2 bg-zinc-800 hover:bg-zinc-700 text-zinc-300 hover:text-white border border-zinc-700 rounded-lg text-sm transition-colors",
+        className
+      )}
+    >
+      {children || "Close"}
+    </button>
   );
 };
 
@@ -172,7 +202,7 @@ export const ModalFooter = ({
   return (
     <div
       className={cn(
-        "flex justify-end p-4 bg-gray-100 dark:bg-neutral-900",
+        "flex justify-end items-center gap-3 p-4 bg-zinc-900/90 border-t border-zinc-800 sticky bottom-0 z-20 backdrop-blur-sm",
         className
       )}
     >
@@ -206,20 +236,22 @@ const CloseIcon = () => {
   const { setOpen } = useModal();
   return (
     <button
+      type="button"
       onClick={() => setOpen(false)}
-      className="absolute top-4 right-4 group z-[9999]"
+      className="absolute top-4 right-4 group z-[9999] p-1.5 rounded-full bg-zinc-800/80 hover:bg-zinc-700 text-zinc-300 hover:text-white border border-zinc-700/60 transition-colors"
+      aria-label="Close modal"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="36"
-        height="36"
+        width="20"
+        height="20"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="text-black dark:text-white h-4 w-4 group-hover:scale-125 group-hover:rotate-3 transition duration-200"
+        className="h-4 w-4"
       >
         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
         <path d="M18 6l-12 12" />
