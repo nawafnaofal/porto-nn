@@ -22,12 +22,13 @@ const SlideShow = ({ images }: { images: string[] }) => {
   return (
     <Splide
       options={{
-        autoplay: "true",
+        autoplay: true,
         perPage: 1,
         start: 0,
         rewind: true,
         padding: { left: "3rem", right: "3rem" },
         gap: "1rem",
+        keyboard: false,
       }}
       hasTrack={false}
     >

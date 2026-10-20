@@ -64,6 +64,8 @@ export const ModalTrigger = ({
   );
 };
 
+import { createPortal } from "react-dom";
+
 export const ModalBody = ({
   children,
   className,
@@ -72,6 +74,13 @@ export const ModalBody = ({
   className?: string;
 }) => {
   const { open, setOpen } = useModal();
+  const [mounted, setMounted] = useState(false);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const modalRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -80,19 +89,29 @@ export const ModalBody = ({
     if (open) {
       document.addEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "hidden";
+      if (scrollRef.current) {
+        scrollRef.current.scrollTop = 0;
+      }
+      const timer = setTimeout(() => {
+        if (scrollRef.current) {
+          scrollRef.current.scrollTop = 0;
+        }
+      }, 50);
+      return () => {
+        clearTimeout(timer);
+        document.removeEventListener("keydown", handleKeyDown);
+        document.body.style.overflow = "auto";
+      };
     } else {
       document.body.style.overflow = "auto";
     }
-    return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = "auto";
-    };
   }, [open, setOpen]);
 
-  const modalRef = useRef(null);
   useOutsideClick(modalRef, () => setOpen(false));
 
-  return (
+  if (!mounted) return null;
+
+  return createPortal(
     <AnimatePresence>
       {open && (
         <motion.div
@@ -108,7 +127,7 @@ export const ModalBody = ({
             backdropFilter: "blur(0px)",
           }}
           data-lenis-prevent
-          className="modall fixed [perspective:800px] [transform-style:preserve-3d] inset-0 h-full w-full flex items-center justify-center z-50 p-4 sm:p-6 md:p-8"
+          className="modall fixed inset-0 h-full w-full flex items-center justify-center z-[9999] p-4 sm:p-6 md:p-8"
         >
           <Overlay />
 
@@ -121,38 +140,38 @@ export const ModalBody = ({
             )}
             initial={{
               opacity: 0,
-              scale: 0.5,
-              rotateX: 40,
-              y: 40,
+              scale: 0.95,
+              y: 20,
             }}
             animate={{
               opacity: 1,
               scale: 1,
-              rotateX: 0,
               y: 0,
             }}
             exit={{
               opacity: 0,
-              scale: 0.8,
-              rotateX: 10,
+              scale: 0.95,
+              y: 20,
             }}
             transition={{
               type: "spring",
-              stiffness: 260,
-              damping: 15,
+              stiffness: 300,
+              damping: 25,
             }}
           >
             <CloseIcon />
             <div
+              ref={scrollRef}
               data-lenis-prevent
-              className="flex-1 overflow-y-auto overscroll-contain w-full"
+              className="flex-1 min-h-0 overflow-y-auto overscroll-contain w-full"
             >
               {children}
             </div>
           </motion.div>
         </motion.div>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body
   );
 };
 
@@ -238,7 +257,7 @@ const CloseIcon = () => {
     <button
       type="button"
       onClick={() => setOpen(false)}
-      className="absolute top-4 right-4 group z-[9999] p-1.5 rounded-full bg-zinc-800/80 hover:bg-zinc-700 text-zinc-300 hover:text-white border border-zinc-700/60 transition-colors"
+      className="absolute top-4 right-4 group z-50 p-2 rounded-full bg-zinc-900/90 hover:bg-zinc-800 text-zinc-300 hover:text-white border border-zinc-700/80 backdrop-blur-md shadow-lg transition-colors cursor-pointer"
       aria-label="Close modal"
     >
       <svg
