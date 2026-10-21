@@ -12,7 +12,7 @@ const PROJECTS = [
   {
     id: 1,
     name: "RUANG",
-    description: "Platform e-commerce busana berbasis Next.js 16 (App Router), PostgreSQL, Prisma, dan Redis. Dilengkapi sinkronisasi stok BigSeller dengan marketplace, sistem penguncian stok checkout 15 menit, pembayaran Midtrans, dan pelacakan resi kurir.",
+    description: "Prototipe e-commerce busana berbasis Next.js 16 (App Router), PostgreSQL, Prisma, dan Redis. Menyajikan simulasi sinkronisasi multi-channel BigSeller, mekanisme penguncian stok checkout 15 menit, sandbox pembayaran Midtrans, dan pelacakan resi kurir.",
     link: "https://ruangg.vercel.app/",
     images: [
       "/assets/projects-screenshots/ruang/1.png",
@@ -23,8 +23,8 @@ const PROJECTS = [
   {
     id: 2,
     name: "YAMA",
-    description: "Storefront e-commerce perlengkapan outdoor berbasis Next.js 16, React 19, Tailwind CSS v4, dan Framer Motion. Menampilkan tipografi kinetik yang bertransisi ke navbar saat di-scroll, footer reveal, drawer keranjang belanja reaktif, dan alur pembayaran QRIS serta Virtual Account.",
-    link: "https://github.com/nawafnaofal/sec-ecommerce",
+    description: "Aplikasi full-stack e-commerce perlengkapan outdoor berbasis Next.js 16, React 19, Tailwind CSS v4, dan Framer Motion. Dilengkapi tipografi kinetik tersinkronisasi scroll, transisi curtain reveal footer, drawer keranjang belanja reaktif, dan simulator pembayaran QRIS serta Virtual Account.",
+    link: "https://sec-ecommerce.vercel.app/",
     images: [
       "/assets/projects-screenshots/yama/1.png",
       "/assets/projects-screenshots/yama/2.png",
