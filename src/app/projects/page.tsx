@@ -12,7 +12,7 @@ const PROJECTS = [
   {
     id: 1,
     name: "RUANG: Contemporary Fashion Studio & E-Commerce",
-    description: "Platform e-commerce studio busana kontemporer dengan estetika tipografi arsitektural. Dilengkapi katalog rilisan terbatas, filter dinamis, shopping cart drawer, integrasi multi-pembayaran digital, dan pelacakan kurir ekspedisi real-time.",
+    description: "Platform e-commerce studio busana kontemporer berbasis Next.js 16 (App Router), PostgreSQL, Prisma, dan Redis. Dilengkapi sinkronisasi inventaris omnichannel BigSeller (Shopee/Tokopedia/TikTok), distributed stock lock 15 menit, Midtrans Payment Gateway (QRIS/VA), dan pelacakan resi multi-ekspedisi.",
     link: "https://ruangg.vercel.app/",
     images: [
       "/assets/projects-screenshots/ruang/1.png",
@@ -22,6 +22,18 @@ const PROJECTS = [
   },
   {
     id: 2,
+    name: "YAMA: High-Performance Alpine & Mountaineering Equipment Store",
+    description: "Storefront e-commerce perlengkapan alpine performa tinggi dengan tipografi kinetik (TMT Mini Mochi) berbasis scroll, transisi footer curtain reveal, reactive cart drawer, dan simulator pembayaran e-commerce Indonesia (QRIS, VA Bank, E-Wallet).",
+    link: "https://github.com/nawafnaofal/sec-ecommerce",
+    images: [
+      "/assets/projects-screenshots/yama/1.png",
+      "/assets/projects-screenshots/yama/2.png",
+      "/assets/projects-screenshots/yama/3.png",
+      "/assets/projects-screenshots/yama/4.png",
+    ],
+  },
+  {
+    id: 3,
     name: "Gaji-Hub: Smart HRIS & Payroll Platform",
     description: "Platform HRIS dan Payroll modern berbasis Web & PWA menggunakan React + Inertia.js dan Laravel. Dilengkapi presensi GPS & verifikasi selfie, manajemen cuti, serta otomasi perhitungan pajak TER PPh 21 dan slip gaji digital.",
     link: "https://github.com/nawafnaofal/gaji-hub",
@@ -30,7 +42,7 @@ const PROJECTS = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     name: "J-FORCES Group - Media Hub & Corporate Portal",
     description: "Portal resmi holding industri pertahanan nasional dengan arsitektur decoupled. Menggabungkan frontend React (Vite) dan backend Laravel REST API & MySQL untuk publikasi berita, pengujian balistik, dan integrasi multi-domain anak perusahaan.",
     link: "https://j-forces.co.id/",
@@ -41,7 +53,7 @@ const PROJECTS = [
     ],
   },
   {
-    id: 4,
+    id: 5,
     name: "PT Ridho Agung Mitra Abadi (RAMA)",
     description: "Website profil dan katalog perlengkapan militer standar internasional (NIJ 0101.06) dengan fitur inspeksi 3D real-time berbasis Three.js/WebGL. Mendukung rotasi 360° yang halus, tekstur material PBR, dan performa stabil 60 FPS.",
     link: "https://rama.j-forces.co.id/",
@@ -52,7 +64,7 @@ const PROJECTS = [
     ],
   },
   {
-    id: 5,
+    id: 6,
     name: "PT Jala Berikat Nusantara Perkasa (JBNP)",
     description: "Simulasi dan katalog digital 3D armada kendaraan tempur taktis (Rantis Garuda UN & ILSV). Dilengkapi pengaturan simulasi arah cahaya matahari interaktif, rendering bayangan realistis, dan sistem pembersihan memori GPU otomatis.",
     link: "https://jbnp.j-forces.co.id/",
@@ -63,7 +75,7 @@ const PROJECTS = [
     ],
   },
   {
-    id: 6,
+    id: 7,
     name: "PT Anugerah Mekanika Sukses Abadi (AMSA)",
     description: "Virtual tour 3D hanggar manufaktur komponen presisi pertahanan berbasis Three.js. Menampilkan navigasi kamera sinematik antar unit mesin CNC berteknologi tinggi (HAAS ST-20Y) dan informasi pengujian akurasi mikron CMM.",
     link: "https://amsa.j-forces.co.id/",
@@ -74,7 +86,7 @@ const PROJECTS = [
     ],
   },
   {
-    id: 7,
+    id: 8,
     name: "Uncharted Land of Horror (Game)",
     description: "Game petualangan horor psikologis 2D Top-Down Pixel Art berbasis Unity & C#. Berperan sebagai Lead Programmer mengimplementasikan controller karakter, sistem event trigger dialog, dan mekanisme AI musuh.",
     link: "https://shoshinsha-game.itch.io/uncharted-land-of-horror",
@@ -85,7 +97,7 @@ const PROJECTS = [
     ],
   },
   {
-    id: 8,
+    id: 9,
     name: "Development of E-Commerce System at Az-Zahra Shop Using Laravel (Journal)",
     description: "Publikasi ilmiah pada JOMLAI (Journal of Machine Learning & Artificial Intelligence, 2022). Penulis pertama riset arsitektur MVC e-commerce berbasis Laravel untuk digitalisasi proses transaksi dan inventaris ritel furnitur.",
     link: "https://journal.literasisains.id/index.php/jomlai/article/view/176",
@@ -94,7 +106,7 @@ const PROJECTS = [
     ],
   },
   {
-    id: 9,
+    id: 10,
     name: "Identifikasi Serangan Low-rate DDoS Menggunakan AdaBoost (Journal)",
     description: "Publikasi riset keamanan jaringan pada Jurnal Simpatik (UBSI, 2023). Membedah identifikasi anomali serangan Low-rate DDoS berbahaya menggunakan model ensemble learning berbasis algoritma AdaBoost.",
     link: "https://jurnal.bsi.ac.id/index.php/simpatik/article/view/1829",
@@ -103,7 +115,7 @@ const PROJECTS = [
     ],
   },
   {
-    id: 10,
+    id: 11,
     name: "Buku: Pemrograman Golang Untuk Pemula: Pengolahan Dataset",
     description: "Buku referensi teknis ber-ISBN (978-623-88549-3-6) yang diterbitkan oleh Buku Pedia di platform Bacabuku. Panduan eksplorasi sintaks Go, concurrency, dan pemrosesan dataset berskala besar.",
     link: "https://bacabuku.com/book/BK87541/teknik-informatika-pemrograman-golang-untuk-pemula-pengolahan-dataset",
@@ -112,7 +124,7 @@ const PROJECTS = [
     ],
   },
   {
-    id: 11,
+    id: 12,
     name: "Buku: Toko Online dengan Laravel dan Vue.js",
     description: "Buku panduan full-stack web developer terbitan Buku Pedia dan tersedia di Gramedia Digital. Membahas arsitektur SPA e-commerce, reactive components Vue.js, integrasi REST API Laravel, dan modul transaksi belanja.",
     link: "https://ebooks.gramedia.com/id/buku/toko-online-dengan-laravel-dan-vue-js",
