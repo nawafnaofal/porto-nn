@@ -11,8 +11,8 @@ import "@splidejs/react-splide/css";
 const PROJECTS = [
   {
     id: 1,
-    name: "RUANG: Contemporary Fashion Studio & E-Commerce",
-    description: "Platform e-commerce studio busana kontemporer berbasis Next.js 16 (App Router), PostgreSQL, Prisma, dan Redis. Dilengkapi sinkronisasi inventaris omnichannel BigSeller (Shopee/Tokopedia/TikTok), distributed stock lock 15 menit, Midtrans Payment Gateway (QRIS/VA), dan pelacakan resi multi-ekspedisi.",
+    name: "RUANG",
+    description: "Platform e-commerce busana berbasis Next.js 16 (App Router), PostgreSQL, Prisma, dan Redis. Dilengkapi sinkronisasi stok BigSeller dengan marketplace, sistem penguncian stok checkout 15 menit, pembayaran Midtrans, dan pelacakan resi kurir.",
     link: "https://ruangg.vercel.app/",
     images: [
       "/assets/projects-screenshots/ruang/1.png",
@@ -22,8 +22,8 @@ const PROJECTS = [
   },
   {
     id: 2,
-    name: "YAMA: High-Performance Alpine & Mountaineering Equipment Store",
-    description: "Storefront e-commerce perlengkapan alpine performa tinggi dengan tipografi kinetik (TMT Mini Mochi) berbasis scroll, transisi footer curtain reveal, reactive cart drawer, dan simulator pembayaran e-commerce Indonesia (QRIS, VA Bank, E-Wallet).",
+    name: "YAMA",
+    description: "Storefront e-commerce perlengkapan outdoor berbasis Next.js 16, React 19, Tailwind CSS v4, dan Framer Motion. Menampilkan tipografi kinetik yang bertransisi ke navbar saat di-scroll, footer reveal, drawer keranjang belanja reaktif, dan alur pembayaran QRIS serta Virtual Account.",
     link: "https://github.com/nawafnaofal/sec-ecommerce",
     images: [
       "/assets/projects-screenshots/yama/1.png",

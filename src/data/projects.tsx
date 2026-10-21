@@ -378,8 +378,8 @@ export type Project = {
 const projects: Project[] = [
   {
     id: "ruang-studio",
-    category: "Full-Stack E-Commerce & Omnichannel Sync",
-    title: "RUANG: Contemporary Fashion Studio & E-Commerce",
+    category: "E-Commerce",
+    title: "RUANG",
     src: "/assets/projects-screenshots/ruang/1.png",
     screenshots: ["1.png", "2.png", "3.png"],
     live: "https://ruangg.vercel.app/",
@@ -403,27 +403,27 @@ const projects: Project[] = [
         <div>
           <div className="mb-4 inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-neutral-500/10 text-neutral-300 border border-neutral-500/30">
             <span className="w-1.5 h-1.5 rounded-full bg-neutral-300" />
-            Full-Stack E-Commerce Architecture
+            E-Commerce
           </div>
           <TypographyP className="font-mono text-base mb-4 leading-relaxed">
-            Platform e-commerce studio busana kontemporer berbasis <strong>Next.js 16 (App Router)</strong>, <strong>PostgreSQL</strong>, dan <strong>Prisma ORM</strong>. Dirancang untuk volume transaksi tinggi dengan sinkronisasi inventaris omnichannel real-time, sistem distributed lock untuk mencegah overselling, dan gateway pembayaran terverifikasi secara kriptografis.
+            Platform e-commerce busana yang dibangun dengan Next.js 16 (App Router), PostgreSQL, Prisma ORM, dan Redis. Menangani sinkronisasi inventaris multi-channel otomatis, sistem penguncian stok saat checkout untuk mencegah overselling, integrasi pembayaran Midtrans, dan pelacakan pengiriman kurir.
           </TypographyP>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 my-4">
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">Sinkronisasi Omnichannel BigSeller</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Integrasi BigSeller Open API dengan HMAC-SHA256 signature authorization untuk sinkronisasi stok dua arah otomatis antara website dan marketplace (Shopee, Tokopedia, TikTok Shop, Lazada).</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Sinkronisasi Stok BigSeller</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Sinkronisasi dua arah otomatis antara etalase website dan marketplace (Shopee, Tokopedia, TikTok Shop, Lazada) menggunakan BigSeller Open API dengan otorisasi HMAC-SHA256.</p>
             </div>
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">Distributed Stock Lock (15-Menit TTL)</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Mekanisme locking berbasis Redis pada proses checkout untuk mengamankan alokasi stok selama 15 menit, mencegah race condition dan overselling pada traffic lonjakan rilisan terbatas.</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Penguncian Stok Checkout (15 Menit)</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Distributed locking berbasis Redis untuk mengunci ketersediaan unit selama 15 menit saat proses checkout berlangsung guna mencegah race condition dan overselling.</p>
             </div>
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">Payment Gateway & Verifikasi Webhook</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Pemrosesan transaksi Midtrans mendukung Dynamic QRIS dan Virtual Account (BCA, Mandiri, BRI) dengan verifikasi hash SHA-512 webhook signature guna memastikan idempotensi mutasi pembayaran.</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Pembayaran Midtrans & Webhook</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Mendukung Dynamic QRIS dan Virtual Account perbankan (BCA, Mandiri, BRI) dengan verifikasi hash SHA-512 webhook signature untuk memastikan status pesanan akurat.</p>
             </div>
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">Pelacakan Logistik & Ingestion Massal</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Integrasi pipeline pelacakan nomor resi multi-ekspedisi real-time (J&T, SiCepat, JNE) serta otomasi import katalog produk via parsing Excel/CSV dengan validasi runtime skema Zod.</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Pelacakan Resi & Ingestion Katalog</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Integrasi pelacakan nomor resi pengiriman kurir (J&T, SiCepat, JNE) serta fitur import katalog produk massal dari file Excel/CSV dengan validasi skema Zod.</p>
             </div>
           </div>
           <ProjectsLinks live={this.live} repo={this.github} />
@@ -440,8 +440,8 @@ const projects: Project[] = [
   },
   {
     id: "yama-alpine",
-    category: "High-Performance E-Commerce & Interactive UI",
-    title: "YAMA: High-Performance Alpine & Mountaineering Equipment Store",
+    category: "Outdoor Storefront",
+    title: "YAMA",
     src: "/assets/projects-screenshots/yama/1.png",
     screenshots: ["1.png", "2.png", "3.png", "4.png"],
     live: "https://github.com/nawafnaofal/sec-ecommerce",
@@ -463,27 +463,27 @@ const projects: Project[] = [
         <div>
           <div className="mb-4 inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-amber-500/10 text-amber-400 border border-amber-500/30">
             <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
-            Interactive Storefront Engineering
+            E-Commerce Storefront
           </div>
           <TypographyP className="font-mono text-base mb-4 leading-relaxed">
-            Storefront e-commerce perlengkapan alpine performa tinggi yang dibangun dengan <strong>Next.js 16 (App Router)</strong>, <strong>React 19</strong>, <strong>Tailwind CSS v4</strong>, dan <strong>Framer Motion</strong>. Menghadirkan interaksi tipografi kinetik tersinkronisasi scroll, render footer curtain fisik, serta simulasi checkout transaksi digital Indonesia.
+            Storefront e-commerce perlengkapan outdoor berbasis Next.js 16, React 19, Tailwind CSS v4, dan Framer Motion. Mengimplementasikan tipografi kinetik yang bertransisi ke navbar saat di-scroll, footer reveal, drawer keranjang belanja reaktif, serta simulasi alur pembayaran QRIS dan Virtual Account.
           </TypographyP>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 my-4">
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">Tipografi Kinetik & Kontras Dinamis</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Font kustom variabel (TMT Mini Mochi) yang bertransformasi secara proporsional dari hero center ke 108px docked navigation, disertai deteksi luminance untuk pembalikan warna adaptif pada setiap section latar belakang.</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Tipografi Kinetik & Penyesuaian Kontras</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Font variabel kustom yang bertransformasi proporsional dari hero center ke bilah navigasi 108px seiring scroll, dengan penyesuaian warna otomatis terhadap kontras latar belakang.</p>
             </div>
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">Transisi Curtain Sticky Reveal Footer</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Arsitektur footer tersembunyi dengan positioning sticky-fixed setinggi viewport di lapisan terbawah layout, menghadirkan transisi fisik mulus tanpa layout shift atau beban komputasi GPU berlebih.</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Transisi Curtain Reveal Footer</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Struktur footer sticky-fixed setinggi layar di lapisan terbawah layout untuk menghasilkan transisi reveal fisik saat konten utama selesai di-scroll.</p>
             </div>
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">State Keranjang & Optimistic Update</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Komponen drawer keranjang reaktif dengan kalkulasi otomatis subtotal dan pajak, manipulasi kuantitas item, serta sinkronisasi badge counter global yang bebas re-render tidak perlu.</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Drawer Keranjang Belanja Reaktif</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Manajemen state keranjang dengan kalkulasi subtotal dan pajak secara langsung, mutasi jumlah barang, serta sinkronisasi indikator keranjang tanpa re-render berlebih.</p>
             </div>
             <div className="p-3 bg-zinc-900/60 rounded-lg border border-zinc-800">
-              <h5 className="font-semibold text-white text-sm mb-1">Simulator Pembayaran Domestik</h5>
-              <p className="text-xs text-zinc-400 leading-relaxed">Alur checkout interaktif yang mensimulasikan sistem pembayaran nasional: Dynamic QRIS dengan countdown timer otomatis, nomor Virtual Account Bank (BCA, Mandiri, BRI, BNI) dengan 1-click clipboard copy, dan form validasi alamat.</p>
+              <h5 className="font-semibold text-white text-sm mb-1">Simulasi Pembayaran Indonesia</h5>
+              <p className="text-xs text-zinc-400 leading-relaxed">Alur transaksi mencakup Dynamic QRIS dengan timer hitung mundur, Virtual Account bank nasional (BCA, Mandiri, BRI, BNI) dengan salin nomor sekali klik, dan form pengiriman.</p>
             </div>
           </div>
           <ProjectsLinks live={this.live} repo={this.github} />
