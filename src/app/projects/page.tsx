@@ -24,7 +24,7 @@ const PROJECTS = [
     id: 2,
     name: "YAMA",
     description: "Aplikasi full-stack e-commerce perlengkapan outdoor berbasis Next.js 16, React 19, Tailwind CSS v4, dan Framer Motion. Dilengkapi tipografi kinetik tersinkronisasi scroll, transisi curtain reveal footer, drawer keranjang belanja reaktif, dan simulator pembayaran QRIS serta Virtual Account.",
-    link: "https://sec-ecommerce.vercel.app/",
+    link: "https://yama-lab.vercel.app/",
     images: [
       "/assets/projects-screenshots/yama/1.png",
       "/assets/projects-screenshots/yama/2.png",

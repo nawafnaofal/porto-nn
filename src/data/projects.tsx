@@ -451,7 +451,7 @@ const projects: Project[] = [
     title: "YAMA",
     src: "/assets/projects-screenshots/yama/1.png",
     screenshots: ["1.png", "2.png", "3.png", "4.png"],
-    live: "https://sec-ecommerce.vercel.app/",
+    live: "https://yama-lab.vercel.app/",
     skills: {
       frontend: [
         PROJECT_SKILLS.next,
